@@ -1,0 +1,610 @@
+// Fonts
+@font-face
+   font-family OpenSans
+   font-style Regular
+   src url(open-sans/OpenSans-Regular.ttf)
+@font-face
+   font-family OpenSans-light
+   font-style Light
+   src url(open-sans/OpenSans-Light.ttf)
+@font-face
+   font-family OpenSans-bold
+   font-style Bold
+   src url(open-sans/OpenSans-Bold.ttf)
+
+// Main
+body
+  font-family OpenSans
+.container
+  @media screen and (min-width: 1200px)
+    width: 1420px
+
+// Var
+$white = #fff
+$lgray = #f6f6f6
+
+// Custom Classes
+.fullImg
+  margin: 0 auto;
+  width: 100%;
+.hiddenSmall
+  @media screen and (max-width: 400px)
+    display: none!important
+.hiddenLarge
+  @media screen and (min-width: 400px)
+    display: none!important
+// Nav
+.navbar-nav
+  @media screen and (max-width: 400px)
+    border-top: solid 5px #24cbc9;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom: solid 5px #24cbc9;
+    li
+      &:not(:first-child)
+        background-color: $lgray
+        border-bottom: solid 1px #ffffff
+      .mobileArrow
+        width: 15px
+        float: right
+nav.navbar.navbar-default.BotNav
+  border-radius: 0
+  border-top: none
+  box-shadow: 0px 3px 8px #a0a0a0
+  background: $white;
+  .tagline
+    @media screen and (max-width: 400px)
+      padding-right: 10px
+    img
+      @media screen and (max-width: 400px)
+        width: 160px
+  .findAProMobile
+    display: inline-block;
+    margin-top: 7px;
+    border: solid 2px #2369e3;
+    padding: 5px;
+    border-radius: 4px;
+    a
+      font-size: 12px
+      color: #083d8c
+      font-weight: bold
+      &:hover
+        text-decoration: none
+  h2
+    text-align: center
+    color: #025696
+  a
+    color: #083d8c
+    font-weight: bold
+    font-size: 16px
+    @media screen and (max-width: 400px)
+      color: #333
+  .findAPro a
+    font-size: 16px
+    color: #216ce1
+    border: solid 1px #216ce1
+    border-radius: 4px
+  .locationIcon
+    margin-right: 8px
+    width: 15px
+  .container-fluid
+    background: $white
+    padding: 25px 0
+    button 
+      border: none
+      background: none
+      @media screen and (max-width: 400px)
+        margin: 0;
+        padding: 0;
+      img
+        width: 70px
+        @media screen and (max-width: 400px)
+          width: 60px
+          margin-bottom: -10px
+    @media screen and (max-width: 400px)
+      padding: 5px 15px
+      padding-bottom: 0
+nav.navbar.navbar-default.topNav
+  margin-bottom: 0
+  padding: 1px
+  background-color: #083d8c
+  border-radius: 0
+  #navbar
+    padding: 0
+  .container-fluid
+    padding: 0
+  a 
+   color: #fff
+   padding-bottom: 0;
+   padding-right: 4px;
+  .shareIcon
+    width: 50%
+    padding-left: 0
+  .commSer
+    padding-right: 0
+    padding-left: 25px
+  @media screen and (max-width: 400px)
+    display: none
+
+// Dealers area
+   // Mixins
+  dealers-boxes()
+    box-shadow: 0px 1px 2px #888
+    border-radius: 6px
+    text-align: center
+
+.filterDiv
+  background: $lgray
+  border-radius: 10px
+  margin-bottom: 25px
+  padding: 25px
+  margin-top: -75px
+  @media screen and (max-width: 400px)
+    margin-top: inherit;
+    clear: both;
+    min-height: 15vh;
+    margin-bottom: 0;
+  .col-md-3
+    text-align: right
+    @media screen and (max-width: 400px)
+      padding: 0
+  .results
+    color: #2369e3
+    font-size: 20px
+    font-weight: bold
+    margin-bottom: 0
+    padding-right: 30px
+    border-right: solid 1px #ececec
+    @media screen and (max-width: 400px)
+      border-right:none
+      text-align: left
+      font-size: 14px
+      padding: 0
+  @media screen and (max-width: 400px)
+    margin-top: inherit
+.filterResults
+  .btn 
+    border-radius: 0
+  .btn-default
+    &:focus
+      color: #333
+      background-color: #fff
+      border-color: #333
+    .caret
+      margin-left: 8px
+      padding-right: 0px
+  .btn-default.active.focus,
+  .btn-default.active:focus,
+  .btn-default.active:hover,
+  .btn-default:active.focus,
+  .btn-default:active:focus,
+  .btn-default:active:hover,
+  .open>.dropdown-toggle.btn-default.focus,
+  .open>.dropdown-toggle.btn-default:focus,
+  .open>.dropdown-toggle.btn-default:hover{
+    color: #333;
+    background-color: #fff;
+    border-color: #333;
+  }
+  #filterControls1
+    left: -140px
+    min-width: 260px
+    padding: 10px
+    ul
+      margin-top: 0
+      .toolTip
+        width: 30px
+  span 
+    color: #000000
+    font-weight: bold
+    font-size: 18px
+    padding-right: 10px
+  form
+    display inline-block
+    ul
+      li
+        display: inline-block
+        margin-right: 30px
+        @media screen and (max-width: 400px)
+          display: block
+        .toolTip
+          width: 30px
+        .toolTipA
+          padding: 0
+  input[type=checkbox] 
+    display: none!important
+  input[type=checkbox] + label
+    background: url("/images/blank_radio_btn.png") no-repeat
+    height:23px;
+    padding-left: 30px;
+    font-family OpenSans-light
+  input[type=checkbox]:checked + label
+    background: url("/images/radio_btn.png") no-repeat
+    height:23px;
+    font-family OpenSans-light
+  .helpIcon
+    margin-left: -25px
+    img
+      width: 30px;
+  .dropdown
+    display: none
+    @media screen and (max-width: 400px)
+      display: block
+  #filterControls
+    margin-bottom: 0;
+    @media screen and (max-width: 400px)
+      display: none
+  @media screen and (max-width: 400px)
+    margin-top: -6px;
+.filterResultsContainer
+  .col-md-4
+    dealers-boxes()
+    height: 100%
+    margin-bottom: 30px
+    padding: 0
+    @media screen and (max-width: 400px)
+      margin-bottom: 0px
+    @media screen and (min-width: 992px)
+      width: 31.999999%
+      margin-right: 1.2%
+    &.showServ
+      display: block
+      -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 2s; /* Firefox < 16 */
+      -ms-animation: fadein 2s; /* Internet Explorer */
+      -o-animation: fadein 2s; /* Opera < 12.1 */
+      animation: fadein 2s;
+      @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+      @-moz-keyframes fadein {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+      }
+      @-webkit-keyframes fadein {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+      }
+      @-ms-keyframes fadein {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+      }
+      @-o-keyframes fadein {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+      }
+
+    h2
+      border-bottom: solid 2px #ececec
+      padding: 25px
+      font-family OpenSans-light
+      font-size: 24px
+      @media screen and (max-width: 400px)
+        margin-top: 0
+        border-bottom: none
+    h3
+      margin-top: 25px
+      font-weight: bold
+      span
+        display: none
+      @media screen and (max-width: 400px)
+        background: #216cdf
+        color: $white
+        font-size: 16px
+        border-radius: 4px
+        padding: 5px
+        font-weight: bold
+        margin-top: 10px
+        span
+         display: inline-block
+         padding: 0 8px
+         font-size: 12px
+    h4
+      font-size: 15px
+      font-weight: bold
+    .cantTalk
+      margin: 20px 0
+    .hours
+      margin-bottom: 50px
+      p
+        margin-bottom: 2px
+  .phoneLink
+    &:hover
+      text-decoration: none
+  .tapToCall
+    padding: 0px 41px;
+    a
+      text-decoration: none
+      color: #000000
+      &:hover
+        text-decoration: none
+        color: #000000
+  .phoneIcon
+    width: 30px
+    margin-right: 5px
+    @media screen and (max-width: 400px)
+      display: none
+  .MobilephoneIcon
+    display: none
+    @media screen and (max-width: 400px)
+      display: inline-block
+      width: 30px
+  .contactAPro
+    padding: 15px;
+    margin-bottom: 30px; 
+    a
+      font-size: 16px
+      color: #216ce1
+      border: solid 1px #04c6c5
+      border-radius: 4px
+      padding: 15px
+      &:hover
+        text-decoration: none
+        cursor: pointer
+  .emailIcon
+    margin-right: 8px
+    width: 15px
+  .services
+    background: $lgray
+    min-height: 84px
+    .col-md-12
+      padding: 14px
+      @media screen and (max-width: 400px)
+          padding: 14px 0
+      div[class*="serve"]
+        text-align: left
+        padding: 4px 20px
+        @media screen and (max-width: 400px)
+          padding: 8px 0px
+      .serve-Installation 
+        &::before
+          content: url("/images/star.png")
+          margin-right: 10px
+      .serve-Residential
+        &::before
+          content: url("/images/home.png")
+          margin-right: 10px
+      .serve-Service
+        &::before
+          content: url("/images/gear.png")
+          margin-right: 10px
+      .serve-Commercial
+        &::before
+          content: url("/images/users.png")
+          margin-right: 10px
+// footer area
+.poolFooter
+  .topFooter
+    background: #083d8d
+    text-align: center
+    padding: 18px
+    .socialLinks
+      .connect
+        margin-right: 30px
+      li
+        display: inline-block
+        color: #ffffff
+        font-size: 16px
+        font-weight: bold
+        text-transform: uppercase
+        margin-right: 15px
+        margin-top: 15px
+  .botFooter
+    background: #216cdf
+    text-align: center
+    padding: 18px
+    .footLinks
+      @media screen and (max-width: 400px)
+        display: inline
+        padding-left: 0
+        border-top: solid 1px $white
+        padding-top: 5px
+      li
+        display: inline-block
+        color: #ffffff
+        font-size: 13px
+        margin-right: 8px
+        @media screen and (max-width: 400px)
+          display: inline
+          font-size: 12px
+          margin-right: 4px;
+        a
+          color: #ffffff
+          font-size: 13px
+          margin-right: 8px
+          @media screen and (max-width: 400px)  
+            font-size: 12px
+            margin-right: 4px
+
+  .MobilebotFooter
+    background: #216cdf
+    text-align: center
+    padding: 18px
+    display: none
+    @media screen and (max-width: 400px)
+      display: block
+      padding: 9px
+      padding-bottom: 0
+    .MobilefootLinks
+      display: none
+      @media screen and (max-width: 400px)
+        display: inline
+        padding-left: 0
+        padding-top: 5px
+        margin-bottom: 15px
+      img
+        width: 15px;
+      li
+        display: inline-block
+        color: #ffffff
+        font-size: 13px
+        margin-right: 8px
+        @media screen and (max-width: 400px)
+          display: inline
+          font-size: 12px
+          margin-right: 4px;
+        a
+          color: #ffffff
+          font-size: 13px
+          margin-right: 8px
+          @media screen and (max-width: 400px)  
+            font-size: 12px
+            margin-right: 4px
+// not found page
+#NfPage
+  .notFound
+    text-align: center
+    .nf404
+      font-size: 150px
+
+// popup
+.overlay
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background: rgba(0, 0, 0, 0.7)
+  transition: opacity 500ms
+  visibility: hidden
+  opacity: 0
+
+.overlay
+  &:target 
+    visibility: visible
+    opacity: 1
+    z-index: 999
+
+.popup
+  margin: 70px auto
+  background: #fff
+  border-radius: 5px
+  width: 44%
+  position: relative
+  position: fixed
+  overflow-y: scroll
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  height: 100vh
+  p
+    text-align: left
+    font-size: 15px;
+  h2
+    padding: 14px
+    font-weight: bold
+    font-size: 25px
+    margin-top: 0
+    color: #333 
+  .close
+    position: absolute
+    top: 20px
+    right: 30px
+    transition: all 200ms
+    font-size: 30px
+    font-weight: bold
+    text-decoration: none
+    color: #fff 
+  .content 
+    max-height: 30%
+    .head
+      background: #083d8b
+      text-align: left
+      color: $white
+    h2
+      color: $white
+      font-weight: bold
+      font-size: 30px
+      padding-top: 15px
+      padding-bottom: 45px
+      padding-left: 10px
+    h3
+      color: $white
+      margin: 0;
+      padding: 20px 14px 0
+      font-size: 14px
+      background: #093a8e
+    .poolForm
+      margin-bottom: 30px
+    .lorem
+      margin-bottom: 70px
+      background: $lgray
+      padding: 0
+      p
+        padding: 8px
+        font-size: 13px
+        color: #909090
+    .btnDiv
+      border-top: solid 1px #ececec
+      padding: 15px
+      @media screen and (max-width: 400px)
+        text-align: right
+    .subBtn
+      background-color: $lgray
+      border: none
+      font-size: 18px
+      img
+        width: 15px
+        margin-left: 5px
+    .mobileSend
+      background-color: #ffffff
+      color: #25ccce
+      font-weight: bold
+      border: none
+  .form-horizontal
+    background: $lgray
+    padding-top: 15px
+    @media screen and (max-width: 400px)
+      background: $white
+    .control-label
+      text-align: left
+      padding-left: 0
+      font-family OpenSans-bold
+      color: #606060
+    .formCircle
+      &.col-md-2
+        padding: 0
+        text-align: right
+        img
+          width: 25px
+          padding-bottom: 5px
+      i
+        color: #c1bdbd
+    .formErrors
+      &.false
+        display: none
+      &.true
+        display: block
+        color: #ff0000
+  .PoolQuestion
+    text-align: left
+    padding: 0
+    p
+      padding-left: 0
+      font-size: 14px
+      font-weight: bold
+    .poolInput
+      border: solid 1px #000
+      padding: 5px 12px
+      border-radius: 4px
+      font-size: 16px
+      margin-right: 10px
+      input
+        display: none        
+      &.true
+        background: #00c7c5
+        color: #ffffff
+
+
+@media screen and (max-width: 700px)
+  .box
+    width: 70%
+  
+  .popup
+    width: 70%
+  
+@media screen and (max-width: 400px)
+  .popup
+    width: 95%
